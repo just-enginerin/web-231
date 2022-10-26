@@ -1,3 +1,11 @@
+/**
+Title: global.css
+Author: Professor Krasso
+Date: 10/25/2022
+Modified By: Erin Brady
+Description: Global styling to be applied to all files within WEB 231 Coursework repository
+*/
+
 .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     transition: 0.3s;
