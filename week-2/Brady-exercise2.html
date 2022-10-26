@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Standard HTML settings -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>WEB 231 - Enterprise JavaScript I</title>
+
+    <!-- Importing Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;500;700&display=swap" rel="stylesheet">
+
+    <!-- Custom Stylesheets -->
+    <link href="../global.css" rel="stylesheet">
+    <link href="./site.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <main id="container">
+      <h1 class="app-header">Exercise 2.2 - Hello JavaScript</h1>
+      <button type="button" id="btnMyCourse">What course am I taking?</button>
+      <p id="txtMyWorld"></p>
+      <a href="../week-1/index.html" class="return-home">Return</a>
+    </main>
+
+    <script>
+      const myWorldText = document.getElementById("txtMyWorld")
+      myWorldText.innerHTML = "You are now in Brady's world!"
+
+      // Displays the name of the current course when the "What course am I taking?" button is clicked
+      const myCourseBtn = document.getElementById("btnMyCourse")
+      myCourseBtn.onclick = () => alert("WEB 231 - Enterprise JavaScript")
+    </script>
+  </body>
+</html>
