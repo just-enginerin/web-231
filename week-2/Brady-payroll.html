@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Standard HTML settings -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>WEB 231 - Enterprise JavaScript I</title>
+
+    <!-- Importing Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;500;700&display=swap" rel="stylesheet">
+
+    <!-- Custom Stylesheet -->
+    <link href="../global.css" rel="stylesheet">
+    <link href="../site.css" rel="stylesheet">
+    <link href="Brady-payroll.css" rel="stylesheet">
+  </head>
+  <body>
+    <main id="container">
+      <h1 id="payroll-header" class="app-header">Payroll System</h1>
+
+      <!-- Each Employee Record has a title and unordered list of their personal details. -->
+      
+      <h3>Employee Record 1</h3>
+      <ul>
+        <li id="txtFirstNameLudwig"></li>
+        <li id="txtLastNameBeethoven"></li>
+        <li id="txtAddressLudwig"></li>
+        <li id="txtHireDateLudwig"></li>
+        <li id="txtPayRateLudwig"></li>
+      </ul>
+
+      <h3>Employee Record 2</h3>
+      <ul>
+        <li id="txtFirstNameJohann"></li>
+        <li id="txtLastNameBach"></li>
+        <li id="txtAddressJohann"></li>
+        <li id="txtHireDateJohann"></li>
+        <li id="txtPayRateJohann"></li>
+      </ul>
+
+      <h3>Employee Record 3</h3>
+      <ul>
+        <li id="txtFirstNameWolfgang"></li>
+        <li id="txtLastNameMozart"></li>
+        <li id="txtAddressWolfgang"></li>
+        <li id="txtHireDateWolfgang"></li>
+        <li id="txtPayRateWolfgang"></li>
+      </ul>
+    
+      <a href="../index.html" class="return-home">Return</a>
+
+    </main>
+
+    <script>
+
+      // Define the first name, last name, address, hire date, and pay rate for each of the 3 Employee Records.
+
+      const firstName1 = "Ludwig"
+      const firstName2 = "Johann"
+      const firstName3 = "Wolfgang"
+
+      const lastName1 = "Beethoven"
+      const lastName2 = "Bach"
+      const lastName3 = "Mozart"
+
+      const address1 = "505 Main St"
+      const address2 = "512 Main St"
+      const address3 = "600 Main St"
+
+      const hireDate1 = new Date().toLocaleDateString("en-US")
+      const hireDate2 = new Date().toLocaleDateString("en-US")
+      const hireDate3 = new Date().toLocaleDateString("en-US")
+
+      const payRate1 = 18.87425.toFixed(1)
+      const payRate2 = 25.4901.toFixed(1)
+      const payRate3 = 50.139.toFixed(1)
+
+      // Assign each of the defined values to the corresponding list item for that Employee Record.
+
+      document.getElementById("txtFirstNameLudwig").innerHTML = firstName1
+      document.getElementById("txtLastNameBeethoven").innerHTML = lastName1
+      document.getElementById("txtAddressLudwig").innerHTML = address1
+      document.getElementById("txtHireDateLudwig").innerHTML = hireDate1
+      document.getElementById("txtPayRateLudwig").innerHTML = payRate1
+
+      document.getElementById("txtFirstNameJohann").innerHTML = firstName2
+      document.getElementById("txtLastNameBach").innerHTML = lastName2
+      document.getElementById("txtAddressJohann").innerHTML = address2
+      document.getElementById("txtHireDateJohann").innerHTML = hireDate2
+      document.getElementById("txtPayRateJohann").innerHTML = payRate2
+
+      document.getElementById("txtFirstNameWolfgang").innerHTML = firstName3
+      document.getElementById("txtLastNameMozart").innerHTML = lastName3
+      document.getElementById("txtAddressWolfgang").innerHTML = address3
+      document.getElementById("txtHireDateWolfgang").innerHTML = hireDate3
+      document.getElementById("txtPayRateWolfgang").innerHTML = payRate3
+      
+    </script>
+  </body>
+</html>
+ 
