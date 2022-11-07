@@ -1,0 +1,46 @@
+/**
+Title: Brady-temp-conversion.css
+Author: Erin Brady
+Date: 11/6/2022
+Description: Styling for the Temperature Conversion component
+*/
+
+body {
+    text-align: center;
+    font-size: 28px;
+    font-family: 'Oswald', 'Verdana', 'Arial', sans-serif;
+    width: 90%;
+    margin: 0 auto;
+}
+
+#container {
+    margin: 50px 100px 0;
+}
+
+.app-header {
+    font-weight: 400;
+}
+
+#fahrenheit-card {
+    text-align: left;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.card {
+    padding: 0 20px;
+    margin-top: 60px;
+}
+
+#btnConvertTemp {
+    background-color: #453674;
+    color: white;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+.return-home {
+    text-align: left;
+    float: left;
+    margin: 20px 0 80px;
+}
