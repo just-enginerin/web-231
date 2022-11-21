@@ -1,0 +1,51 @@
+/**
+Title: Brady-sequence-game.css
+Author: Erin Brady
+Date: 11/20/2022
+Description: Styling for the Sequence Game component
+*/
+
+/* General styles */
+body {
+    text-align: center;
+    font-size: 28px;
+    font-family: 'Oswald', 'Verdana', 'Arial', sans-serif;
+    width: 90%;
+    margin: 0 auto;
+}
+
+#container {
+    margin: 50px 100px 0;
+}
+
+/* Card styles */
+.card {
+    padding: 0 20px;
+    margin-top: 60px;
+}
+
+#guess-number-card {
+    text-align: left;
+    display: flex;
+    justify-content: flex-start;
+}
+
+/* Submit Button styles */
+#btnDisplaySequence {
+    background-color: #453674;
+    color: white;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+#btnDisplaySequence:hover {
+    background-color: #D6A800;
+    color:#453674;
+}
+
+/* Return Home link */
+.return-home {
+    text-align: left;
+    float: left;
+    margin: 20px 0 80px;
+}

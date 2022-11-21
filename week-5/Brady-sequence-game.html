@@ -1,0 +1,116 @@
+<!-- 
+		Title: Brady-sequence-game.html
+		Author: Erin Brady
+		Date: 11/20/2022
+		Description: Sequence Game
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- Standard HTML settings -->
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content-type="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<title>WEB 231 - Enterprise JavaScript I</title>
+
+		<!-- Importing Google Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;500;700&display=swap" rel="stylesheet">
+
+		<!-- Custom Stylesheets -->
+		<link href="../global.css" rel="stylesheet">
+		<link href="./Brady-sequence-game.css" rel="stylesheet">
+	</head>
+	 
+	<body>
+ 
+		<main id="container">
+			<h1 class="app-header">Welcome to the sequence game!</h1>
+ 
+			<div class="card">
+				<div class="card-title">Sequence Selection Form</div>
+				<div class="card-content" id="guess-number-card">
+					<div class="form">
+							<div class="form-field">
+								<label for="sequence">Choose a number sequence: </label>
+								<select class="drop-down-menu" id="sequence">
+									<option value="select">--Select--</option>
+									<option value="fibonacci">Fibonacci Sequence</option>
+									<option value="even">Even Numbers</option>
+									<option value="odd">Odd Numbers</option>
+								</select>
+								</div>
+ 
+						<div class="form-field">
+							<button class="btn btm-primary full-width" id="btnDisplaySequence">Display Sequence</button>
+						</div>
+					</div>
+				</div>
+			</div>
+ 
+			<div class="card">
+				<div class="card-title">Sequence Results</div>
+				<div class="card-content" id="txtResult"></div>
+			</div>
+ 
+			<a href="../index.html" class="return-home">Return</a>
+		</main>
+	</body>
+ 
+	<script>
+		document.getElementById("btnDisplaySequence").onclick = () => {
+			// Collect the user's selection
+			const choice = document.getElementById("sequence").value
+			let result
+			
+			if(choice === "fibonacci") {
+				// Generate the fibonacci sequence numbers that are under 40
+				let num1 = 0
+				let num2 = 1
+				let next = 1
+				let fibonacciSequenceText = ""
+
+				while(num1 < 40) {
+					fibonacciSequenceText += num1 + ", "
+					next = num1 + num2
+					num1 = num2
+					num2 = next
+				}
+
+				result = fibonacciSequenceText
+
+			} else if(choice === "even") {
+				// Generate all positive even numbers under 20
+				let num = 2
+				let evenSequenceText = ""
+				do {
+					evenSequenceText += num + ", "
+					num += 2
+				} while (num < 20)
+
+				result = evenSequenceText
+
+			} else if (choice === "odd") {
+				// Generate all positive odd numbers under 20
+
+				let oddSequenceText = ""
+				for(let num = 1; num < 20; num += 2) {
+					oddSequenceText += num + ", "
+				}
+
+				result = oddSequenceText
+			} else if(choice === "select") {
+				// Error message if the user chooses an invalid selection.
+				result = "  "
+				alert("Invalid selection, please try again!")
+			}
+
+			// Display the result on the web page, according to the user's selection.
+			document.getElementById("txtResult").innerText = result.slice(0, -2)
+		}
+	</script>
+</html>
+ 
