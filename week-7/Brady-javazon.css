@@ -1,0 +1,75 @@
+/**
+Title: Brady-javazon.css
+Author: Erin Brady
+Date: 12/4/2022
+Description: Styling for Javazon App
+*/
+
+/* General styles */
+body {
+    text-align: center;
+    font-size: 28px;
+    font-family: 'Oswald', 'Verdana', 'Arial', sans-serif;
+    width: 90%;
+    margin: 0 auto;
+}
+
+#container {
+    margin: 50px 100px 0;
+}
+
+/* Card styles */
+.card {
+    padding: 0 20px;
+    margin-top: 60px;
+}
+
+/* Table Styles */
+#products, #services, #employees {
+    display: none;
+}
+
+table {
+    width: 100%;
+    text-align: left;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+}
+
+table th {
+    background-color: #453674;
+    color: white;
+    font-weight: 400;
+    padding: 12px 0;
+}
+
+table td, table th {
+    border: 1px solid #ddd;
+    padding-left: 12px;
+}
+
+table tr:hover {
+    background-color: #D6A800;
+    color :#453674;
+    cursor: pointer;
+}
+
+/* Submit Button styles */
+#btnDisplayListing {
+    background-color: #453674;
+    color: white;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+#btnDisplayListing:hover {
+    background-color: #D6A800;
+    color:#453674;
+}
+
+/* Return Home link */
+.return-home {
+    text-align: left;
+    float: left;
+    margin: 20px 0 80px;
+}

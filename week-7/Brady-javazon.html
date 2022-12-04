@@ -1,0 +1,286 @@
+<!-- 
+		Title: Brady-javazon.html
+		Author: Erin Brady
+		Date: 12/04/2022
+		Description: Javazon
+ -->
+
+ <!DOCTYPE html>
+ <html lang="en">
+     <head>
+         <!-- Standard HTML settings -->
+         <meta charset="UTF-8">
+         <meta http-equiv="X-UA-Compatible" content-type="utf-8">
+         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+         <title>WEB 231 - Enterprise JavaScript I</title>
+ 
+         <!-- Importing Google Fonts -->
+         <link rel="preconnect" href="https://fonts.googleapis.com">
+         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+         <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;500;700&display=swap" rel="stylesheet">
+ 
+         <!-- Custom Stylesheets -->
+         <link href="../global.css" rel="stylesheet">
+         <link href="./Brady-javazon.css" rel="stylesheet">
+     </head>
+      
+     <body>
+        <main id="container">
+					<h1 class="app-header">Welcome to the Javazon App!</h1>
+
+					<!-- User Input Area -->
+					<div class="card">
+						<div class="card-title">Javazon Selection Form</div>
+						<div class="card-content">
+							<div class="form">
+								<div class="form-field">
+									<label for="listings">Choose a listing: </label>
+									<select class="drop-down-menu" id="listings">
+										<option value="select">--Select--</option>
+										<option value="products">Products</option>
+										<option value="services">Services</option>
+                                        <option value="employees">Employees</option>
+									</select>
+								</div>
+
+								<!-- Form Submission -->
+								<div class="form-field">
+									<button class="btn btm-primary full-width" id="btnDisplayListing">
+										Display Listing
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<a href="../index.html" class="return-home">Return</a>
+  
+					<!-- Results Display Area -->
+					<div class="card">
+						<div class="card-content" id="result">
+							<div id="products" class="full-width"></div>
+							<div id="employees" class="full-width"></div>
+							<div id="services" class="full-width"></div>
+						</div>
+					</div>
+        </main>
+     </body>
+  
+     <script>
+			// HTML containers for rendering Results
+			const products = document.getElementById("products")
+			const services = document.getElementById("services")
+			const employees = document.getElementById("employees")
+
+
+			// Schemas:
+			// Product Schema
+            class Product {
+                constructor(id, description, price, quantity) {
+                    this.id = id
+                    this.description = description
+                    this.price = price.toFixed(2)
+                    this.quantity = quantity
+                    this.totalValue = (quantity * price).toFixed(2)
+                }
+            }
+
+            // Product listings
+            const product1 = new Product(1, "Dog Treats: Beef", 5.99, 15)
+            const product2 = new Product(2, "Bejeweled Dog Collar", 8.5, 5)
+            const product3 = new Product(3, "Food and Water Dishes with Bone Decal", 12, 5)
+            const product4 = new Product(4, "Waterproof Sofa Cover: Navy Blue", 36, 1)
+            const product5 = new Product(5, "The Dog Whisperer: A Compassionate Nonviolent Approach to Dog Training by Paul Owens: Paperback", 16.3, 1)
+
+			// Populate Products table with Product listings
+			products.innerHTML = `
+				<div class="card-title" id="result-title">
+					Javazon Products
+				</div>
+				<table>
+					<tr>
+						<th>Product ID</th>
+						<th>Description</th>
+						<th>Price</th>
+						<th>Quantity</th>
+						<th>Total Value</th>
+					</tr>
+					<tr>
+						<td>${product1.id}</td>
+						<td>${product1.description}</td>
+						<td>${product1.price}</td>
+						<td>${product1.quantity}</td>
+						<td>${product1.totalValue}</td>
+					</tr>
+					<tr>
+						<td>${product2.id}</td>
+						<td>${product2.description}</td>
+						<td>${product2.price}</td>
+						<td>${product2.quantity}</td>
+						<td>${product2.totalValue}</td>
+					</tr>
+					<tr>
+						<td>${product3.id}</td>
+						<td>${product3.description}</td>
+						<td>${product3.price}</td>
+						<td>${product3.quantity}</td>
+						<td>${product3.totalValue}</td>
+					</tr>
+					<tr>
+						<td>${product4.id}</td>
+						<td>${product4.description}</td>
+						<td>${product4.price}</td>
+						<td>${product4.quantity}</td>
+						<td>${product4.totalValue}</td>
+					</tr>
+					<tr>
+						<td>${product5.id}</td>
+						<td>${product5.description}</td>
+						<td>${product5.price}</td>
+						<td>${product5.quantity}</td>
+						<td>${product5.totalValue}</td>
+					</tr>
+				</table>
+			`
+
+			// Service Schema
+            class Service {
+                constructor(id, description, hourlyRate, min) {
+                    this.id = id
+                    this.description = description
+                    this.hourlyRate = hourlyRate.toFixed(2)
+                    this.min = min
+                }
+            }
+
+
+            // Service listings
+            const service1 = new Service(1, "Dog Walk", 30, 1)
+            const service2 = new Service(2, "Grooming", 50, 1)
+            const service3 = new Service(3, "Behavioral Training", 60, 2)
+
+			// Populate Services table with Service listings
+			services.innerHTML = `
+				<div class="card-title" id="result-title">
+					Javazon Services
+				</div>
+				<table>
+					<tr>
+						<th>Service ID</th>
+						<th>Description</th>
+						<th>Hourly Rate</th>
+						<th>Minimum Billable Hours</th>
+					</tr>
+					<tr>
+						<td>${service1.id}</td>
+						<td>${service1.description}</td>
+						<td>${service1.hourlyRate}</td>
+						<td>${service1.min}</td>
+					</tr>
+					<tr>
+						<td>${service2.id}</td>
+						<td>${service2.description}</td>
+						<td>${service2.hourlyRate}</td>
+						<td>${service2.min}</td>
+					</tr>
+					<tr>
+						<td>${service3.id}</td>
+						<td>${service3.description}</td>
+						<td>${service3.hourlyRate}</td>
+						<td>${service3.min}</td>
+					</tr>
+				</table>
+			`
+
+            // Employee Schema
+            class Employee {
+                constructor(id, firstName, lastName, salary) {
+                    this.id = id
+                    this.firstName = firstName
+                    this.lastName = lastName
+                    this.salary = salary.toFixed(2)
+                }
+            }
+			
+            // Employee listings
+            const employee1 = new Employee(1, "Charlie", "Stooper", 70000)
+            const employee2 = new Employee(2, "Tabitha", "Rockheart", 420000)
+            const employee3 = new Employee(3, "Wilhelm", "Chapulski", 25000)
+            const employee4 = new Employee(4, "Xavier", "Tuttuenberg", 57000)
+            const employee5 = new Employee(5, "Bora", "Wong", 120000)
+
+			// Populate Employees table with Employee listings
+			employees.innerHTML = `
+				<div class="card-title" id="result-title">
+					Javazon Employees
+				</div>
+				<table>
+					<tr>
+						<th>Employee ID</th>
+						<th>Last Name</th>
+						<th>First Name</th>
+						<th>Salary</th>
+					</tr>
+					<tr>
+						<td>${employee1.id}</td>
+						<td>${employee1.lastName}</td>
+						<td>${employee1.firstName}</td>
+						<td>${employee1.salary}</td>
+					</tr>
+					<tr>
+						<td>${employee2.id}</td>
+						<td>${employee2.lastName}</td>
+						<td>${employee2.firstName}</td>
+						<td>${employee2.salary}</td>
+					</tr>
+					<tr>
+						<td>${employee3.id}</td>
+						<td>${employee3.lastName}</td>
+						<td>${employee3.firstName}</td>
+						<td>${employee3.salary}</td>
+					</tr>
+					<tr>
+						<td>${employee4.id}</td>
+						<td>${employee4.lastName}</td>
+						<td>${employee4.firstName}</td>
+						<td>${employee4.salary}</td>
+					</tr>
+					<tr>
+						<td>${employee5.id}</td>
+						<td>${employee5.lastName}</td>
+						<td>${employee5.firstName}</td>
+						<td>${employee5.salary}</td>
+					</tr>
+				</table>`
+			
+			// Render the table that corresponds with the user's selection.
+			document.getElementById("btnDisplayListing").onclick = (() => {
+				const choice = document.getElementById("listings").value
+				
+				switch(choice){
+					case "products":
+						products.style.display = "block"
+						services.style.display = "none"
+						employees.style.display = "none"
+						break
+					case "services":
+						products.style.display = "none"
+						services.style.display = "block"
+						employees.style.display = "none"
+						break
+					case "employees":
+						products.style.display = "none"
+						services.style.display = "none"
+						employees.style.display = "block"
+						break
+					default:
+						products.style.display = "none"
+						services.style.display = "none"
+						employees.style.display = "none"
+						break
+				}
+
+			})
+     </script>
+ </html>
