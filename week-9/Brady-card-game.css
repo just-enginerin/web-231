@@ -1,0 +1,59 @@
+/**
+Title: Brady-card-game.css
+Author: Erin Brady
+Date: 12/15/2022
+Description: Styling for Card Game
+*/
+
+/* General styles */
+body {
+  text-align: center;
+  font-size: 28px;
+  font-family: 'Oswald', 'Verdana', 'Arial', sans-serif;
+  width: 90%;
+  margin: 0 auto;
+}
+
+#container {
+  margin: 50px 100px 0;
+}
+
+/* Card styles */
+.card {
+  padding: 0 20px;
+  margin-top: 60px;
+}
+
+/* Deal Cards Button styles */
+#btnDealCards {
+  background-color: #453674;
+  color: white;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
+#btnDealCards:hover {
+  background-color: #D6A800;
+  color:#453674;
+}
+
+/* Return Home link */
+.return-home {
+  text-align: left;
+  float: left;
+  width: 80px;
+  margin: 20px 0;
+}
+
+/* Playing Cards styles */
+#player-card-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 10px;
+  padding: 10px;
+}
+
+.player-card {
+  text-align: center;
+  margin-top: 0;
+}
